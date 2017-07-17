@@ -1,0 +1,5 @@
+FROM    hypriot/rpi-python
+COPY    code/*.py /data/
+RUN     chmod 755 /data/qosreflect.py
+EXPOSE  50000/udp
+CMD     [ "/data/qosreflect.py", "--port", "50000", "--host", "All", "-d" ]
